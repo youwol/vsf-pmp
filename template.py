@@ -33,7 +33,8 @@ template = Template(
                 "three": "^0.152.0",
                 "rxjs": "^6.5.5",
             }
-        )
+        ),
+        devTime={"@types/three": "^0.152.0"},
     ),
     bundles=Bundles(
         mainModule=MainModule(
