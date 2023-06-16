@@ -73,7 +73,7 @@ template = Template(
             ),
         ],
     ),
-    userGuide=True,
+    userGuide=False,
 )
 
 generate_template(template)
