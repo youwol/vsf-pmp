@@ -1,13 +1,13 @@
 # @youwol/vsf-pmp
 
-
+Visual Studio Flow toolbox wrapping the library PMP (Polygon Mesh Processing).
 
 This library is part of the hybrid cloud/local ecosystem
 [YouWol](https://platform.youwol.com/applications/@youwol/platform/latest).
 
 ## Links
 
-[Online user-guide](https://l.youwol.com/doc/@youwol/vsf-pmp)
+
 
 [Developers documentation](https://platform.youwol.com/applications/@youwol/cdn-explorer/latest?package=@youwol/vsf-pmp&tab=doc)
 

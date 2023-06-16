@@ -1,7 +1,7 @@
 
 const runTimeDependencies = {
     "externals": {
-        "@youwol/vsf-core": "^0.1.1",
+        "@youwol/vsf-core": "^0.1.2",
         "@youwol/cdn-client": "^2.0.4",
         "three": "^0.152.0",
         "rxjs": "^6.5.5"
@@ -128,11 +128,11 @@ export const setup = {
     name:'@youwol/vsf-pmp',
         assetId:'QHlvdXdvbC92c2YtcG1w',
     version:'0.1.0-wip',
-    shortDescription:"",
+    shortDescription:"Visual Studio Flow toolbox wrapping the library PMP (Polygon Mesh Processing).",
     developerDocumentation:'https://platform.youwol.com/applications/@youwol/cdn-explorer/latest?package=@youwol/vsf-pmp&tab=doc',
     npmPackage:'https://www.npmjs.com/package/@youwol/vsf-pmp',
     sourceGithub:'https://github.com/youwol/vsf-pmp',
-    userGuide:'https://l.youwol.com/doc/@youwol/vsf-pmp',
+    userGuide:'',
     apiVersion:'01',
     runTimeDependencies,
     externals,
