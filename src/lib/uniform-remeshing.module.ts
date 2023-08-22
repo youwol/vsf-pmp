@@ -5,7 +5,7 @@
  * @module
  */
 
-import { Modules, Attributes } from '@youwol/vsf-core'
+import { Modules, Configurations } from '@youwol/vsf-core'
 import { map, mergeMap } from 'rxjs/operators'
 import { ensurePmpInitialized, reMeshInput } from './utils'
 import { uniformRemesh } from './standalone.functions'
@@ -13,9 +13,9 @@ import { from } from 'rxjs'
 
 export const configuration = {
     schema: {
-        edgeFactor: new Attributes.Float({ value: 1, min: 0 }),
-        iterationsCount: new Attributes.Integer({ value: 10 }),
-        useProjection: new Attributes.Boolean({ value: true }),
+        edgeFactor: new Configurations.Float({ value: 1, min: 0 }),
+        iterationsCount: new Configurations.Integer({ value: 10 }),
+        useProjection: new Configurations.Boolean({ value: true }),
     },
 }
 

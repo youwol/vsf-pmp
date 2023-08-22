@@ -5,7 +5,7 @@
  * @module
  */
 
-import { Modules, Attributes } from '@youwol/vsf-core'
+import { Modules, Configurations } from '@youwol/vsf-core'
 import { map, mergeMap } from 'rxjs/operators'
 import { ensurePmpInitialized, reMeshInput } from './utils'
 import { from } from 'rxjs'
@@ -13,9 +13,9 @@ import { implicitSmoothing } from './standalone.functions'
 
 export const configuration = {
     schema: {
-        timestep: new Attributes.Float({ value: 0.001, min: 0 }),
-        useUniformLaplace: new Attributes.Boolean({ value: false }),
-        rescale: new Attributes.Boolean({ value: true }),
+        timestep: new Configurations.Float({ value: 0.001, min: 0 }),
+        useUniformLaplace: new Configurations.Boolean({ value: false }),
+        rescale: new Configurations.Boolean({ value: true }),
     },
 }
 

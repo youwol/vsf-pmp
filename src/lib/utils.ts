@@ -1,7 +1,7 @@
 import { BufferAttribute, BufferGeometry } from 'three'
 import { from, Observable } from 'rxjs'
 import { mergeMap } from 'rxjs/operators'
-import { Modules } from '@youwol/vsf-core'
+import { Modules, Contracts } from '@youwol/vsf-core'
 
 export interface PmpMeshTrait {
     position: ArrayBuffer
@@ -19,8 +19,8 @@ export function implementBufferGeometryTrait(d: unknown): d is BufferGeometry {
     return (d as BufferGeometry).isBufferGeometry
 }
 
-export const contractPmpGeom = Modules.expect.single<PmpMeshTrait>({
-    when: Modules.expect.of({
+export const contractPmpGeom = Contracts.single<PmpMeshTrait>({
+    when: Contracts.of({
         description: 'A PMP geometry',
         when: (data: unknown) => {
             return implementPmpMeshTrait(data)
@@ -55,10 +55,10 @@ export function ensurePmpInitialized<TData, TConf>() {
                             return
                         }
 
-                        if (pmp.onRuntimeInitialized) {
-                            resolve({ ...message, pmp })
-                            return
-                        }
+                        // if (pmp.onRuntimeInitialized) {
+                        //     resolve({ ...message, pmp })
+                        //     return
+                        // }
                         pmp.onRuntimeInitialized = () =>
                             resolve({ ...message, pmp })
                     }),
