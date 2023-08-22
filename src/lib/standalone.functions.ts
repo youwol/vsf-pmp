@@ -20,12 +20,17 @@ export async function init(): Promise<PmpModule> {
         })
     }
     const pmp: PmpModule = window['PmpModule']
+    if (pmp.buildSurface) {
+        return pmp
+    }
     return await new Promise((resolve) => {
-        if (pmp.onRuntimeInitialized) {
+        // if (pmp.onRuntimeInitialized) {
+        //     resolve(pmp)
+        //     return
+        // }
+        pmp.onRuntimeInitialized = () => {
             resolve(pmp)
-            return
         }
-        pmp.onRuntimeInitialized = () => resolve(pmp)
     })
 }
 
@@ -36,7 +41,7 @@ export async function buildSurface({
     mesh: Immutable<BufferGeometry | PmpMeshTrait>
     pmp?: PmpModule
 }) {
-    pmp = pmp || (await init())
+    pmp = await init()
     if (implementBufferGeometryTrait(mesh)) {
         return pmp.buildSurface(
             mesh.attributes.position.array,
