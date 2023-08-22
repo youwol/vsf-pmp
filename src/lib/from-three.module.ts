@@ -3,7 +3,7 @@
  * @module
  */
 
-import { Modules } from '@youwol/vsf-core'
+import { Modules, Contracts } from '@youwol/vsf-core'
 import { map } from 'rxjs/operators'
 import { BufferGeometry } from 'three'
 import { implementBufferGeometryTrait } from './utils'
@@ -15,13 +15,13 @@ export const configuration = {
 export const inputs = {
     input$: {
         description: 'The three geometry to convert.',
-        contract: Modules.expect.contract<{
+        contract: Contracts.contract<{
             geometry: BufferGeometry
         }>({
             description: 'Be able to retrieve Three.BufferGeometry',
             requirements: {
-                geometry: Modules.expect.single({
-                    when: Modules.expect.of({
+                geometry: Contracts.single({
+                    when: Contracts.of({
                         description: 'BufferGeometry',
                         when: implementBufferGeometryTrait,
                     }),

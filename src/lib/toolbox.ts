@@ -1,4 +1,4 @@
-import { Modules, Projects } from '@youwol/vsf-core'
+import { Modules, ToolBox } from '@youwol/vsf-core'
 import { basePathDoc, urlModuleDoc } from './constants'
 import { setup } from '../auto-generated'
 
@@ -16,7 +16,7 @@ function getImplementationModule<T extends keyof Modules>(name: T): Modules[T] {
     return window[symbol] as Modules[T]
 }
 
-export function toolbox(): Projects.ToolBox {
+export function toolbox(): ToolBox {
     return {
         name: 'PMP',
         uid: setup.name,
