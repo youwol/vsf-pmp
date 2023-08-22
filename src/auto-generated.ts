@@ -1,8 +1,8 @@
 
 const runTimeDependencies = {
     "externals": {
-        "@youwol/vsf-core": "^0.1.2",
-        "@youwol/cdn-client": "^2.0.4",
+        "@youwol/vsf-core": "^0.2.0",
+        "@youwol/cdn-client": "^2.0.6",
         "three": "^0.152.0",
         "rxjs": "^6.5.5"
     },
@@ -12,7 +12,7 @@ const externals = {
     "@youwol/vsf-core": {
         "commonjs": "@youwol/vsf-core",
         "commonjs2": "@youwol/vsf-core",
-        "root": "@youwol/vsf-core_APIv01"
+        "root": "@youwol/vsf-core_APIv02"
     },
     "@youwol/cdn-client": {
         "commonjs": "@youwol/cdn-client",
@@ -40,7 +40,7 @@ const externals = {
 }
 const exportedSymbols = {
     "@youwol/vsf-core": {
-        "apiKey": "01",
+        "apiKey": "02",
         "exportedSymbol": "@youwol/vsf-core"
     },
     "@youwol/cdn-client": {
@@ -127,13 +127,13 @@ const entries = {
 export const setup = {
     name:'@youwol/vsf-pmp',
         assetId:'QHlvdXdvbC92c2YtcG1w',
-    version:'0.1.0',
+    version:'0.2.0-wip',
     shortDescription:"Visual Studio Flow toolbox wrapping the library PMP (Polygon Mesh Processing).",
     developerDocumentation:'https://platform.youwol.com/applications/@youwol/cdn-explorer/latest?package=@youwol/vsf-pmp&tab=doc',
     npmPackage:'https://www.npmjs.com/package/@youwol/vsf-pmp',
     sourceGithub:'https://github.com/youwol/vsf-pmp',
     userGuide:'',
-    apiVersion:'01',
+    apiVersion:'02',
     runTimeDependencies,
     externals,
     exportedSymbols,
@@ -158,7 +158,7 @@ export const setup = {
             modules,
             scripts,
         }).then(() => {
-            return window[`@youwol/vsf-pmp_APIv01`]
+            return window[`@youwol/vsf-pmp_APIv02`]
         })
     },
     installAuxiliaryModule: ({name, cdnClient, installParameters}:{
@@ -173,7 +173,7 @@ export const setup = {
         const parameters = installParameters || {}
         const scripts = [
             ...(parameters.scripts || []),
-            `@youwol/vsf-pmp#0.1.0~dist/@youwol/vsf-pmp/${entry.name}.js`
+            `@youwol/vsf-pmp#0.2.0-wip~dist/@youwol/vsf-pmp/${entry.name}.js`
         ]
         const modules = [
             ...(parameters.modules || []),
@@ -184,7 +184,7 @@ export const setup = {
             modules,
             scripts,
         }).then(() => {
-            return window[`@youwol/vsf-pmp/${entry.name}_APIv01`]
+            return window[`@youwol/vsf-pmp/${entry.name}_APIv02`]
         })
     },
     getCdnDependencies(name?: string){
