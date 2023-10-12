@@ -30,21 +30,24 @@ export const inputs = {
         }),
     },
 }
+function createImplicitIndex(vertexCount: number) {
+    const indices = []
+    for (let i = 0; i < vertexCount; i += 3) {
+        indices.push(i, i + 1, i + 2)
+    }
+    return indices
+}
 export const outputs = (
     arg: Modules.OutputMapperArg<typeof configuration.schema, typeof inputs>,
 ) => ({
     output$: arg.inputs.input$.pipe(
         map(({ data, context }) => {
-            /**
-             * It may be the case that Buffer geometries do not have index, in this case:
-             * for (let i = 0; i < positions.length / 3; i += 3) {
-             *   indices.push(i, i+1, i+2);
-             * }
-             * This is the case for instance for 'icosahedron' geometrie.
-             */
+            const index =
+                data.geometry?.index?.array ||
+                createImplicitIndex(data.geometry.attributes.position.count)
             return {
                 data: {
-                    index: data.geometry.index.array,
+                    index,
                     position: data.geometry.attributes.position.array,
                 },
                 context,
