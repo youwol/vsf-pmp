@@ -85,7 +85,7 @@ for file in [
     "README.md",
     ".gitignore",
     ".npmignore",
-    ".prettierignore",
+    #".prettierignore",
     "LICENSE",
     "package.json",
     "tsconfig.json",

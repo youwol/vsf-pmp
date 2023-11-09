@@ -12,3 +12,4 @@ yarn-error.log
 /*.iml
 src/auto-generated.ts
 
+assets/pmp.js
