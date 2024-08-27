@@ -1345,9 +1345,10 @@
   resolved "https://registry.yarnpkg.com/@youwol/tsconfig/-/tsconfig-1.2.1.tgz#3de3218e398a099e2e5ae6996ed959713238b091"
   integrity sha512-SBxGDiXsoEwsuvRv6sSfJx/JjLgdXbXGNpRuRzlitI83kGfCjLmVtS6c3R2+q6HfXfuJRE6kgkRHppr0UFrWlQ==
 
-"@youwol/vsf-core@file:.local-dependencies/youwol-vsf-core-0.3.4-wip-1724750208.tgz":
-  version "0.3.4-wip"
-  resolved "file:.local-dependencies/youwol-vsf-core-0.3.4-wip-1724750208.tgz#63891c14351964b7685e3472a3671168a4878e12"
+"@youwol/vsf-core@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@youwol/vsf-core/-/vsf-core-0.3.3.tgz#51187fda4a3312e7d69b97c53b43938fee44209c"
+  integrity sha512-Efl4Q0ih76vo4pJAHaum6VLqNf48xnCq5oYP+P3Y6z7MGV4sQt2gibkUupvb1g7nUgz3DhM0uUK3xBwTGSOfFQ==
   dependencies:
     "@youwol/logging" "^0.2.0"
     "@youwol/rx-tree-views" "^0.3.1"

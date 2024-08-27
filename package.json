@@ -1,7 +1,7 @@
 {
     "name": "@youwol/vsf-pmp",
     "description": "Visual Studio Flow toolbox wrapping the library PMP (Polygon Mesh Processing).",
-    "version": "0.3.0-wip",
+    "version": "0.3.0",
     "author": "greinisch@youwol.com",
     "homepage": "https://github.com/youwol/vsf-pmp#README.md",
     "main": "dist/@youwol/vsf-pmp.js",
@@ -28,7 +28,7 @@
         ]
     },
     "dependencies": {
-        "@youwol/vsf-core": "file:.local-dependencies/youwol-vsf-core-0.3.4-wip-1724750208.tgz",
+        "@youwol/vsf-core": "^0.3.3",
         "@youwol/webpm-client": "^3.0.7",
         "three": "^0.152.0",
         "rxjs": "^7.5.6"
