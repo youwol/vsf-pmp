@@ -127,7 +127,7 @@ const entries = {
 export const setup = {
     name:'@youwol/vsf-pmp',
         assetId:'QHlvdXdvbC92c2YtcG1w',
-    version:'0.3.0',
+    version:'0.3.1',
     shortDescription:"Visual Studio Flow toolbox wrapping the library PMP (Polygon Mesh Processing).",
     developerDocumentation:'https://platform.youwol.com/applications/@youwol/cdn-explorer/latest?package=@youwol/vsf-pmp&tab=doc',
     npmPackage:'https://www.npmjs.com/package/@youwol/vsf-pmp',
@@ -173,7 +173,7 @@ export const setup = {
         const parameters = installParameters || {}
         const scripts = [
             ...(parameters.scripts || []),
-            `@youwol/vsf-pmp#0.3.0~dist/@youwol/vsf-pmp/${entry.name}.js`
+            `@youwol/vsf-pmp#0.3.1~dist/@youwol/vsf-pmp/${entry.name}.js`
         ]
         const modules = [
             ...(parameters.modules || []),
