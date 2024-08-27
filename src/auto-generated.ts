@@ -1,28 +1,23 @@
 
 const runTimeDependencies = {
     "externals": {
-        "@youwol/vsf-core": "^0.2.4",
         "@youwol/cdn-client": "^2.0.6",
-        "three": "^0.152.0",
-        "rxjs": "^6.5.5"
+        "@youwol/vsf-core": "^0.2.4",
+        "rxjs": "^6.5.5",
+        "three": "^0.152.0"
     },
     "includedInBundle": {}
 }
 const externals = {
-    "@youwol/vsf-core": {
-        "commonjs": "@youwol/vsf-core",
-        "commonjs2": "@youwol/vsf-core",
-        "root": "@youwol/vsf-core_APIv02"
-    },
     "@youwol/cdn-client": {
         "commonjs": "@youwol/cdn-client",
         "commonjs2": "@youwol/cdn-client",
         "root": "@youwol/cdn-client_APIv2"
     },
-    "three": {
-        "commonjs": "three",
-        "commonjs2": "three",
-        "root": "THREE_APIv0152"
+    "@youwol/vsf-core": {
+        "commonjs": "@youwol/vsf-core",
+        "commonjs2": "@youwol/vsf-core",
+        "root": "@youwol/vsf-core_APIv02"
     },
     "rxjs": {
         "commonjs": "rxjs",
@@ -36,24 +31,29 @@ const externals = {
             "rxjs_APIv6",
             "operators"
         ]
+    },
+    "three": {
+        "commonjs": "three",
+        "commonjs2": "three",
+        "root": "three_APIv0152"
     }
 }
 const exportedSymbols = {
-    "@youwol/vsf-core": {
-        "apiKey": "02",
-        "exportedSymbol": "@youwol/vsf-core"
-    },
     "@youwol/cdn-client": {
         "apiKey": "2",
         "exportedSymbol": "@youwol/cdn-client"
     },
-    "three": {
-        "apiKey": "0152",
-        "exportedSymbol": "THREE"
+    "@youwol/vsf-core": {
+        "apiKey": "02",
+        "exportedSymbol": "@youwol/vsf-core"
     },
     "rxjs": {
         "apiKey": "6",
         "exportedSymbol": "rxjs"
+    },
+    "three": {
+        "apiKey": "0152",
+        "exportedSymbol": "three"
     }
 }
 
@@ -65,15 +65,6 @@ const mainEntry : {entryFile: string,loadDependencies:string[]} = {
 }
 
 const secondaryEntries : {[k:string]:{entryFile: string, name: string, loadDependencies:string[]}}= {
-    "uniform-remeshing": {
-        "entryFile": "./lib/uniform-remeshing.module.ts",
-        "loadDependencies": [
-            "@youwol/vsf-core",
-            "@youwol/cdn-client",
-            "rxjs"
-        ],
-        "name": "uniform-remeshing"
-    },
     "adaptive-remeshing": {
         "entryFile": "./lib/adaptive-remeshing.module.ts",
         "loadDependencies": [
@@ -91,6 +82,14 @@ const secondaryEntries : {[k:string]:{entryFile: string, name: string, loadDepen
             "rxjs"
         ],
         "name": "explicit-smoothing"
+    },
+    "from-three": {
+        "entryFile": "./lib/from-three.module.ts",
+        "loadDependencies": [
+            "@youwol/vsf-core",
+            "rxjs"
+        ],
+        "name": "from-three"
     },
     "implicit-smoothing": {
         "entryFile": "./lib/implicit-smoothing.module.ts",
@@ -110,13 +109,14 @@ const secondaryEntries : {[k:string]:{entryFile: string, name: string, loadDepen
         ],
         "name": "to-three"
     },
-    "from-three": {
-        "entryFile": "./lib/from-three.module.ts",
+    "uniform-remeshing": {
+        "entryFile": "./lib/uniform-remeshing.module.ts",
         "loadDependencies": [
             "@youwol/vsf-core",
+            "@youwol/cdn-client",
             "rxjs"
         ],
-        "name": "from-three"
+        "name": "uniform-remeshing"
     }
 }
 
@@ -127,13 +127,13 @@ const entries = {
 export const setup = {
     name:'@youwol/vsf-pmp',
         assetId:'QHlvdXdvbC92c2YtcG1w',
-    version:'0.2.2',
+    version:'0.3.0-wip',
     shortDescription:"Visual Studio Flow toolbox wrapping the library PMP (Polygon Mesh Processing).",
     developerDocumentation:'https://platform.youwol.com/applications/@youwol/cdn-explorer/latest?package=@youwol/vsf-pmp&tab=doc',
     npmPackage:'https://www.npmjs.com/package/@youwol/vsf-pmp',
     sourceGithub:'https://github.com/youwol/vsf-pmp',
     userGuide:'',
-    apiVersion:'02',
+    apiVersion:'03',
     runTimeDependencies,
     externals,
     exportedSymbols,
@@ -158,7 +158,7 @@ export const setup = {
             modules,
             scripts,
         }).then(() => {
-            return window[`@youwol/vsf-pmp_APIv02`]
+            return window[`@youwol/vsf-pmp_APIv03`]
         })
     },
     installAuxiliaryModule: ({name, cdnClient, installParameters}:{
@@ -173,7 +173,7 @@ export const setup = {
         const parameters = installParameters || {}
         const scripts = [
             ...(parameters.scripts || []),
-            `@youwol/vsf-pmp#0.2.2~dist/@youwol/vsf-pmp/${entry.name}.js`
+            `@youwol/vsf-pmp#0.3.0-wip~dist/@youwol/vsf-pmp/${entry.name}.js`
         ]
         const modules = [
             ...(parameters.modules || []),
@@ -184,7 +184,7 @@ export const setup = {
             modules,
             scripts,
         }).then(() => {
-            return window[`@youwol/vsf-pmp/${entry.name}_APIv02`]
+            return window[`@youwol/vsf-pmp/${entry.name}_APIv03`]
         })
     },
     getCdnDependencies(name?: string){
