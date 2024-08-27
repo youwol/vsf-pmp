@@ -39,11 +39,14 @@ export function toolbox(): ToolBox {
                     typeId: 'uniformRemeshing',
                     documentation: urlModuleDoc('UniformRemeshing'),
                     dependencies: {
-                        modules: setup.getCdnDependencies('uniform-remeshing'),
-                        scripts: [
-                            `@youwol/vsf-pmp#${setup.version}~assets/pmp.js`,
-                            `${setup.name}#${setup.version}~dist/${setup.name}/uniform-remeshing.js`,
-                        ],
+                        esm: {
+                            modules:
+                                setup.getCdnDependencies('uniform-remeshing'),
+                            scripts: [
+                                `@youwol/vsf-pmp#${setup.version}~assets/pmp.js`,
+                                `${setup.name}#${setup.version}~dist/${setup.name}/uniform-remeshing.js`,
+                            ],
+                        },
                     },
                 },
                 implementation: ({ fwdParams }) => {
@@ -57,11 +60,14 @@ export function toolbox(): ToolBox {
                     typeId: 'adaptiveRemeshing',
                     documentation: urlModuleDoc('AdaptiveRemeshing'),
                     dependencies: {
-                        modules: setup.getCdnDependencies('adaptive-remeshing'),
-                        scripts: [
-                            `@youwol/vsf-pmp#${setup.version}~assets/pmp.js`,
-                            `${setup.name}#${setup.version}~dist/${setup.name}/adaptive-remeshing.js`,
-                        ],
+                        esm: {
+                            modules:
+                                setup.getCdnDependencies('adaptive-remeshing'),
+                            scripts: [
+                                `@youwol/vsf-pmp#${setup.version}~assets/pmp.js`,
+                                `${setup.name}#${setup.version}~dist/${setup.name}/adaptive-remeshing.js`,
+                            ],
+                        },
                     },
                 },
                 implementation: ({ fwdParams }) => {
@@ -75,11 +81,14 @@ export function toolbox(): ToolBox {
                     typeId: 'implicitSmoothing',
                     documentation: urlModuleDoc('ImplicitSmoothing'),
                     dependencies: {
-                        modules: setup.getCdnDependencies('implicit-smoothing'),
-                        scripts: [
-                            `@youwol/vsf-pmp#${setup.version}~assets/pmp.js`,
-                            `${setup.name}#${setup.version}~dist/${setup.name}/implicit-smoothing.js`,
-                        ],
+                        esm: {
+                            modules:
+                                setup.getCdnDependencies('implicit-smoothing'),
+                            scripts: [
+                                `@youwol/vsf-pmp#${setup.version}~assets/pmp.js`,
+                                `${setup.name}#${setup.version}~dist/${setup.name}/implicit-smoothing.js`,
+                            ],
+                        },
                     },
                 },
                 implementation: ({ fwdParams }) => {
@@ -93,11 +102,14 @@ export function toolbox(): ToolBox {
                     typeId: 'explicitSmoothing',
                     documentation: urlModuleDoc('ExplicitSmoothing'),
                     dependencies: {
-                        modules: setup.getCdnDependencies('explicit-smoothing'),
-                        scripts: [
-                            `@youwol/vsf-pmp#${setup.version}~assets/pmp.js`,
-                            `${setup.name}#${setup.version}~dist/${setup.name}/explicit-smoothing.js`,
-                        ],
+                        esm: {
+                            modules:
+                                setup.getCdnDependencies('explicit-smoothing'),
+                            scripts: [
+                                `@youwol/vsf-pmp#${setup.version}~assets/pmp.js`,
+                                `${setup.name}#${setup.version}~dist/${setup.name}/explicit-smoothing.js`,
+                            ],
+                        },
                     },
                 },
                 implementation: ({ fwdParams }) => {
@@ -111,10 +123,12 @@ export function toolbox(): ToolBox {
                     typeId: 'fromThree',
                     documentation: urlModuleDoc('FromThree'),
                     dependencies: {
-                        modules: setup.getCdnDependencies('from-three'),
-                        scripts: [
-                            `${setup.name}#${setup.version}~dist/${setup.name}/from-three.js`,
-                        ],
+                        esm: {
+                            modules: setup.getCdnDependencies('from-three'),
+                            scripts: [
+                                `${setup.name}#${setup.version}~dist/${setup.name}/from-three.js`,
+                            ],
+                        },
                     },
                 },
                 implementation: ({ fwdParams }) => {
@@ -128,10 +142,12 @@ export function toolbox(): ToolBox {
                     typeId: 'toThree',
                     documentation: urlModuleDoc('ToThree'),
                     dependencies: {
-                        modules: setup.getCdnDependencies('to-three'),
-                        scripts: [
-                            `${setup.name}#${setup.version}~dist/${setup.name}/to-three.js`,
-                        ],
+                        esm: {
+                            modules: setup.getCdnDependencies('to-three'),
+                            scripts: [
+                                `${setup.name}#${setup.version}~dist/${setup.name}/to-three.js`,
+                            ],
+                        },
                     },
                 },
                 implementation: ({ fwdParams }) => {

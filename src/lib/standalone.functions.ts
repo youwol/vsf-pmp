@@ -5,7 +5,7 @@ import {
     PmpMeshTrait,
     toMeshGeometry,
 } from './utils'
-import { install } from '@youwol/cdn-client'
+import { install } from '@youwol/webpm-client'
 import { setup } from '../auto-generated'
 import { Immutable } from '@youwol/vsf-core'
 
