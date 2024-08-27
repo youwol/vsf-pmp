@@ -20,7 +20,7 @@ pkg_json = parse_json(folder_path / "package.json")
 
 template = Template(
     path=folder_path,
-    type=PackageType.Library,
+    type=PackageType.LIBRARY,
     name=pkg_json["name"],
     version=pkg_json["version"],
     shortDescription=pkg_json["description"],
@@ -28,10 +28,10 @@ template = Template(
     dependencies=Dependencies(
         runTime=RunTimeDeps(
             externals={
-                "@youwol/vsf-core": "^0.2.4",
-                "@youwol/cdn-client": "^2.0.6",
+                "@youwol/vsf-core": "^0.3.3",
+                "@youwol/webpm-client": "^3.0.7",
                 "three": "^0.152.0",
-                "rxjs": "^6.5.5",
+                "rxjs": "^7.5.6",
             }
         ),
         devTime={"@types/three": "^0.152.0"},
@@ -44,22 +44,22 @@ template = Template(
             AuxiliaryModule(
                 name="uniform-remeshing",
                 entryFile="./lib/uniform-remeshing.module.ts",
-                loadDependencies=["@youwol/vsf-core", "@youwol/cdn-client", "rxjs"],
+                loadDependencies=["@youwol/vsf-core", "@youwol/webpm-client", "rxjs"],
             ),
             AuxiliaryModule(
                 name="adaptive-remeshing",
                 entryFile="./lib/adaptive-remeshing.module.ts",
-                loadDependencies=["@youwol/vsf-core", "@youwol/cdn-client", "rxjs"],
+                loadDependencies=["@youwol/vsf-core", "@youwol/webpm-client", "rxjs"],
             ),
             AuxiliaryModule(
                 name="explicit-smoothing",
                 entryFile="./lib/explicit-smoothing.module.ts",
-                loadDependencies=["@youwol/vsf-core", "@youwol/cdn-client", "rxjs"],
+                loadDependencies=["@youwol/vsf-core", "@youwol/webpm-client", "rxjs"],
             ),
             AuxiliaryModule(
                 name="implicit-smoothing",
                 entryFile="./lib/implicit-smoothing.module.ts",
-                loadDependencies=["@youwol/vsf-core", "@youwol/cdn-client", "rxjs"],
+                loadDependencies=["@youwol/vsf-core", "@youwol/webpm-client", "rxjs"],
             ),
             AuxiliaryModule(
                 name="to-three",

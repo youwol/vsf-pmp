@@ -1,7 +1,7 @@
 {
     "name": "@youwol/vsf-pmp",
     "description": "Visual Studio Flow toolbox wrapping the library PMP (Polygon Mesh Processing).",
-    "version": "0.2.2",
+    "version": "0.3.2-wip",
     "author": "greinisch@youwol.com",
     "homepage": "https://github.com/youwol/vsf-pmp#README.md",
     "main": "dist/@youwol/vsf-pmp.js",
@@ -28,33 +28,34 @@
         ]
     },
     "dependencies": {
-        "@youwol/vsf-core": "^0.2.4",
-        "@youwol/cdn-client": "^2.0.6",
+        "@youwol/vsf-core": "^0.3.3",
+        "@youwol/webpm-client": "^3.0.7",
         "three": "^0.152.0",
-        "rxjs": "^6.5.5"
+        "rxjs": "^7.5.6"
     },
     "devDependencies": {
-        "@types/three": "^0.152.0",
         "@types/jest": "^29.5.6",
-        "@types/node": "^18.9.1",
+        "@types/node": "^20.11.19",
         "@types/webpack": "^5.28.0",
-        "@youwol/eslint-config": "1.0.0",
-        "@youwol/jest-preset": "1.0.0",
-        "@youwol/prettier-config": "1.0.0",
-        "@youwol/tsconfig": "1.0.0",
+        "@youwol/eslint-config": "^1.2.1",
+        "@youwol/jest-preset": "^1.2.1",
+        "@youwol/prettier-config": "^1.2.1",
+        "@youwol/tsconfig": "^1.2.1",
         "del-cli": "^5.1.0",
         "isomorphic-fetch": "^3.0.0",
-        "ts-loader": "^9.5.0",
-        "ts-node": "^10.9.1",
-        "typedoc": "^0.25.2",
-        "typescript": "^5.2.2",
+        "ts-loader": "9.5.0",
+        "ts-node": "10.9.2",
+        "tsx": "4.7.1",
+        "typedoc": "^0.25.7",
+        "typescript": "5.3.3",
         "webpack": "^5.89.0",
         "webpack-bundle-analyzer": "^4.9.1",
-        "webpack-cli": "5.1.4"
+        "webpack-cli": "5.1.4",
+        "@types/three": "^0.152.0"
     },
     "webpm": {
         "dependencies": {
-            "@youwol/vsf-core": "^0.2.4"
+            "@youwol/vsf-core": "^0.3.3"
         },
         "aliases": []
     }
