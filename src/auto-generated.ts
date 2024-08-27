@@ -1,34 +1,34 @@
 
 const runTimeDependencies = {
     "externals": {
-        "@youwol/cdn-client": "^2.0.6",
-        "@youwol/vsf-core": "^0.2.4",
-        "rxjs": "^6.5.5",
+        "@youwol/vsf-core": "^0.3.3",
+        "@youwol/webpm-client": "^3.0.7",
+        "rxjs": "^7.5.6",
         "three": "^0.152.0"
     },
     "includedInBundle": {}
 }
 const externals = {
-    "@youwol/cdn-client": {
-        "commonjs": "@youwol/cdn-client",
-        "commonjs2": "@youwol/cdn-client",
-        "root": "@youwol/cdn-client_APIv2"
-    },
     "@youwol/vsf-core": {
         "commonjs": "@youwol/vsf-core",
         "commonjs2": "@youwol/vsf-core",
-        "root": "@youwol/vsf-core_APIv02"
+        "root": "@youwol/vsf-core_APIv03"
+    },
+    "@youwol/webpm-client": {
+        "commonjs": "@youwol/webpm-client",
+        "commonjs2": "@youwol/webpm-client",
+        "root": "@youwol/webpm-client_APIv3"
     },
     "rxjs": {
         "commonjs": "rxjs",
         "commonjs2": "rxjs",
-        "root": "rxjs_APIv6"
+        "root": "rxjs_APIv7"
     },
     "rxjs/operators": {
         "commonjs": "rxjs/operators",
         "commonjs2": "rxjs/operators",
         "root": [
-            "rxjs_APIv6",
+            "rxjs_APIv7",
             "operators"
         ]
     },
@@ -39,16 +39,16 @@ const externals = {
     }
 }
 const exportedSymbols = {
-    "@youwol/cdn-client": {
-        "apiKey": "2",
-        "exportedSymbol": "@youwol/cdn-client"
-    },
     "@youwol/vsf-core": {
-        "apiKey": "02",
+        "apiKey": "03",
         "exportedSymbol": "@youwol/vsf-core"
     },
+    "@youwol/webpm-client": {
+        "apiKey": "3",
+        "exportedSymbol": "@youwol/webpm-client"
+    },
     "rxjs": {
-        "apiKey": "6",
+        "apiKey": "7",
         "exportedSymbol": "rxjs"
     },
     "three": {
@@ -69,7 +69,7 @@ const secondaryEntries : {[k:string]:{entryFile: string, name: string, loadDepen
         "entryFile": "./lib/adaptive-remeshing.module.ts",
         "loadDependencies": [
             "@youwol/vsf-core",
-            "@youwol/cdn-client",
+            "@youwol/webpm-client",
             "rxjs"
         ],
         "name": "adaptive-remeshing"
@@ -78,7 +78,7 @@ const secondaryEntries : {[k:string]:{entryFile: string, name: string, loadDepen
         "entryFile": "./lib/explicit-smoothing.module.ts",
         "loadDependencies": [
             "@youwol/vsf-core",
-            "@youwol/cdn-client",
+            "@youwol/webpm-client",
             "rxjs"
         ],
         "name": "explicit-smoothing"
@@ -95,7 +95,7 @@ const secondaryEntries : {[k:string]:{entryFile: string, name: string, loadDepen
         "entryFile": "./lib/implicit-smoothing.module.ts",
         "loadDependencies": [
             "@youwol/vsf-core",
-            "@youwol/cdn-client",
+            "@youwol/webpm-client",
             "rxjs"
         ],
         "name": "implicit-smoothing"
@@ -113,7 +113,7 @@ const secondaryEntries : {[k:string]:{entryFile: string, name: string, loadDepen
         "entryFile": "./lib/uniform-remeshing.module.ts",
         "loadDependencies": [
             "@youwol/vsf-core",
-            "@youwol/cdn-client",
+            "@youwol/webpm-client",
             "rxjs"
         ],
         "name": "uniform-remeshing"
